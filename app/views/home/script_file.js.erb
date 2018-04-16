@@ -38,7 +38,7 @@
 			$('#g_world_card_form [name="email"]').val(Shopify.checkout.email);
 
 			$.ajax({
-        url: 'https://9ac25cbd.ngrok.io/get-customer?customer_id=' + Shopify.checkout.customer_id,
+        url: 'https://healthy-fm-gw-card.herokuapp.com/get-customer?customer_id=' + Shopify.checkout.customer_id,
         type: 'GET'
       }).done(function(customer){
         // console.log(customer);
@@ -95,7 +95,7 @@
 				$('#card_form_submit').addClass('loading');
 
 				$.ajax({
-          url: 'https://9ac25cbd.ngrok.io/save-customer',
+          url: 'https://healthy-fm-gw-card.herokuapp.com/save-customer',
           data: $('#g_world_card_form').serialize(),
           type: 'POST',
           dataType: 'json'
