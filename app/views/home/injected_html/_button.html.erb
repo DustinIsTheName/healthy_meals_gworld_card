@@ -1,0 +1,47 @@
+<div id="g_world_card_success" style="display:none;">
+	<div class="content-box__row">
+		<p>Card details updated successfully.</p>
+	</div>
+</div>
+
+<div id="g_world_card" class="content-box" style="display:none;">
+	<div class="content-box__row">
+		<p>Thank you for your order. For GW students, please click the button below to submit or edit your GWorld Card information.</p>
+
+		<a href="#g_world_card_modal" class="btn overlay-trigger">Add GWorld Card</a>
+	</div>
+</div>
+
+<style type="text/css">
+
+	#g_world_card_success {
+		border: 1px solid #50b83c;
+	  background: #e3f1df;
+	  border-radius: 5px;
+	}
+
+  #g_world_card .content-box__row {
+	  text-align: right;
+	}
+
+  #g_world_card .content-box__row p {
+  	text-align: left;
+  	margin-bottom: 1.14286em;
+  }
+
+	@media (min-width: 750px) {
+	  #g_world_card .content-box__row {
+			display: flex;
+		}
+
+		#g_world_card .content-box__row p {
+			margin-bottom: 0;
+			padding-right: 25px;
+		}
+
+		#g_world_card .content-box__row .btn {
+		  white-space: nowrap;
+		  align-self: center;
+		}
+	}
+</style>

@@ -1,0 +1,155 @@
+<div id="g_world_card_modal" style="display:none;">
+	<div class="modal_inner">
+		<form id="g_world_card_form">
+			<input type="hidden" name="customer_id">
+			<input type="hidden" name="email">
+			<h2>GWorld Card Information</h2>
+			<div class="field-container">
+				<label for="card_form_name">Name as it appears on the card</label>
+				<input id="card_form_name" class="field__input" name="name" type="text">
+			</div>
+			<div class="field-container">
+				<label for="card_form_number">GWorld Card Number</label>
+				<input id="card_form_number" placeholder="1234567812345678" class="field__input" name="number" type="text">
+			</div>
+			<div class="field-container">
+				<label for="card_form_expiration">Expiration Date</label>
+				<input id="card_form_expiration" placeholder="ex: 01/20" class="field__input" name="expiration" type="text">
+			</div>
+			<div class="field-container esa-agreement">
+				<input id="card_form_agreement" class="input-checkbox" type="checkbox">
+				<label for="card_form_agreement">I accept the Electronic Signature Agreement</label>
+				<a href="#" class="esa-trigger">Click here for more info</a>
+			</div>
+			<div class="field-container">
+				<!-- <input id="card_form_submit" class="btn" type="submit" disabled> -->
+				<button id="card_form_submit" class="btn" type="submit" disabled>Submit</button>
+			</div>
+			<div class="field-container esa-container" style="display:none;">
+				<p>By selecting the "I Accept" button, you are signing this Agreement electronically. You agree your electronic signature is the legal equivalent of your manual/handwritten signature on this Agreement. By selecting "I Accept" using any device, means or action, you consent to the legally binding terms and conditions of this Agreement. You further agree that your signature on this document (hereafter referred to as your "E-Signature") is as valid as if you signed the document in writing. You also agree that no certification authority or other third party verification is necessary to validate your E-Signature, and that the lack of such certification or third party verification will not in any way affect the enforceability of your E-Signature or any resulting agreement between you and Healthy Fresh Meals. You are also confirming that you are the student authorized to enter into this Agreement.</p>
+			</div>
+		</form>
+	</div>
+</div>
+
+<style type="text/css">
+	#g_world_card_modal {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,.4);
+		z-index: 9999999;
+	}
+
+	#g_world_card_modal .modal_inner {
+		width: 450px;
+		max-width: calc(100% - 20px);
+	  max-height: 80%;
+		padding: 25px;
+	  box-sizing: border-box;
+	  background: #fff;
+	  border-radius: 5px;
+	  position: relative;
+	  top: 50%;
+	  left: 50%;
+	  overflow: scroll;
+	  -webkit-transform: translate(-50%, -50%);
+	  -moz-transform: translate(-50%, -50%);
+	  transform: translate(-50%, -50%);
+	}
+
+	#g_world_card_modal .modal_inner h2 {
+		padding: 25px 35px;
+	  margin: -25px -25px 15px -25px;
+	  border-bottom: 1px solid #808080;
+	  font-weight: bold;
+	}
+
+	#g_world_card_modal .modal_inner .field-container {
+		padding: 10px;
+	  width: 100%;
+    box-sizing: border-box;
+    float: left;
+	}
+
+	#g_world_card_modal .modal_inner .field-container label {
+	  display: block;
+	  margin-bottom: 5px;
+	  cursor: pointer;
+	}
+
+	#g_world_card_modal .modal_inner .field-container input[type="text"] {
+	  border: 1px solid #808080;
+	}
+
+	#g_world_card_modal .modal_inner .field-container.esa-agreement label {
+	  margin-bottom: 0;
+	}
+
+	#g_world_card_modal .modal_inner .field-container.esa-agreement #card_form_agreement {
+		float: left;
+		margin-right: 10px;
+	}
+
+	#g_world_card_modal .modal_inner .field-container.esa-agreement .esa-trigger {
+	  clear: both;
+	  display: inline-block;
+	  margin-top: 10px;
+	  text-decoration: underline;
+	}
+
+	#g_world_card_modal #card_form_submit {
+	  width: 100%;
+	}
+
+	#g_world_card_modal #card_form_submit[disabled] {
+		background: #939393;
+	}
+
+	@-webkit-keyframes btn-loading-spinner {
+	  from {
+	    -webkit-transform: rotate(0deg);
+	    transform: rotate(0deg)
+	  }
+
+	  to {
+	    -webkit-transform: rotate(360deg);
+	    transform: rotate(360deg)
+	  }
+	}
+
+	@keyframes btn-loading-spinner {
+	  from {
+	    -webkit-transform: rotate(0deg);
+	    transform: rotate(0deg)
+	  }
+
+	  to {
+	    -webkit-transform: rotate(360deg);
+	    transform: rotate(360deg)
+	  }
+	}
+
+	#g_world_card_modal #card_form_submit.loading {
+		color: transparent;
+	}
+
+	#g_world_card_modal #card_form_submit.loading:after {
+		content: "";
+	  width: 25px;
+	  height: 25px;
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  margin-top: -12.5px;
+	  margin-left: -12.5px;
+	  border: 1px solid #fff;
+	  border-top: 0;
+	  border-right: 0;
+	  border-radius: 50%;
+    -webkit-animation: btn-loading-spinner 0.7s linear infinite;
+    animation: btn-loading-spinner 0.7s linear infinite;
+	}
+</style>
